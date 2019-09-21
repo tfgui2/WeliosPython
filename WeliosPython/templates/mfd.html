@@ -8,13 +8,14 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
     <script type="text/javascript">
-        var sock = io();
+        var sock = io({transports:['websocket'], rememberTransport:false});
         sock.on('connect', function () {
             sock.send('new_connect');
         });
         
         function bclick(msg) {
             sock.send(msg);
+            console.log(msg);
         }
     </script>
 </head>
@@ -28,6 +29,7 @@
         <area target="" alt="3" title="3" onclick="bclick('P');" coords="6,176,87,248" shape="rect">
         <area target="" alt="4" title="4" onclick="bclick('I');" coords="661,177,742,251" shape="rect">
     </map>
+    
 
 </body>
 </html>

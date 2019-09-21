@@ -19,6 +19,7 @@ def mfd():
 def request(message):
     if message != 'new_connect':
         SendAuto(message)
+        print(message)
 
 if __name__ == '__main__':
     #app.run()
