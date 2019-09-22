@@ -30,6 +30,8 @@
   <ItemGroup>
     <Content Include="AutoItX3_x64.dll" />
     <Content Include="static\mfd.jpg" />
+    <Content Include="static\WebsocketProcess.js" />
+    <Content Include="templates\index.html" />
     <Content Include="templates\mfd.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

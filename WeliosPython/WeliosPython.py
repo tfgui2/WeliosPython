@@ -11,9 +11,13 @@ app = Flask(__name__)
 app.secret_key = "mysecret"
 socket_io = SocketIO(app)
 
-@app.route('/mfd')
-def mfd():
-    return render_template('mfd.html')
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/t/<templateName>')
+def viewTemplate(templateName):
+    return render_template('{}.html'.format(templateName))
 
 @socket_io.on('message')
 def request(message):
@@ -23,5 +27,6 @@ def request(message):
 
 if __name__ == '__main__':
     #app.run()
+    print("Start welios.")
     socket_io.run(app, host='0.0.0.0', port=5000)
 
